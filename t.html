@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      /* ... Your existing styles ... */
+
+      #overlay {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-between; /* Display side by side */
+        align-items: center;
+        z-index: 1;
+      }
+
+      #menu-modal {
+        background-color: transparent;
+        border: solid 2px var(--main-color);
+        border-radius: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 30%; /* Adjust the width as needed */
+        opacity: 0;
+        animation: dropFromTop 1s ease-out forwards,
+          borderGlow 2s ease-in-out infinite;
+      }
+
+      #modal {
+        background-color: transparent;
+        border: solid 2px var(--main-color);
+        border-radius: 15px;
+        padding: 8px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 60%; /* Adjust the width as needed */
+        position: relative;
+        opacity: 0;
+        animation: dropFromTop 1s ease-out forwards,
+          borderGlow 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Home">
+      <header>
+        <!-- ... Your existing header ... -->
+        <div
+          class="nav-name"
+          onclick="openModal()"
+          style="margin-top: 20%; color: black"
+        >
+          <!-- ... Your existing nav-name ... -->
+          sdsd
+        </div>
+      </header>
+      <div class="home-contain">
+        <div class="home-text" style="padding-left: 105px">
+          <!-- ... Your existing home-text ... -->
+        </div>
+        <div class="home-image">
+          <!-- ... Your existing home-image ... -->
+        </div>
+      </div>
+      <div id="overlay">
+        <div id="menu-modal">
+          <span id="menu-closeBtn" onclick="closeMenuModal()">&times;</span>
+          <h2 style="text-align: center">Menu</h2>
+          <ul style="list-style: none; padding: 0; text-align: center">
+            <li>
+              <a href="#" style="text-decoration: none; color: black">Home</a>
+            </li>
+            <li>
+              <a href="#" style="text-decoration: none; color: black">Skills</a>
+            </li>
+            <li>
+              <a href="#" style="text-decoration: none; color: black"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="#" style="text-decoration: none; color: black">About</a>
+            </li>
+          </ul>
+        </div>
+        <div id="modal">
+          <span id="closeBtn" onclick="closeModal()">&times;</span>
+          <h2 style="text-align: center">About</h2>
+          <p style="font-family: cursive; line-height: 40px">
+            <!-- ... Your existing About content ... -->
+          </p>
+        </div>
+      </div>
+    </div>
+    <button onclick="openModal()">hhh</button>
+
+    <script>
+      function openModal() {
+        document.getElementById("overlay").style.display = "flex";
+      }
+
+      function closeModal() {
+        document.getElementById("overlay").style.display = "none";
+      }
+
+      function closeMenuModal() {
+        document.getElementById("overlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
